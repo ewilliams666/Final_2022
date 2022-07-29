@@ -24,15 +24,118 @@ mutate(across(where(is.character), as.factor))
 
 A new  preventative vaccine (covid91) is under test in clinical trials. Given the nature of this vaccine it is suspected that the drug may exhibit different effectiveness across the variety of subpopulations tracked. Consider population subgroups by gender( guys and gals), drug use, and sexual orientation. Write a complete report that separately considers this drug for each subgroup and your recommendations as to whether people in the subgroup should take the vaccine. Structure your report in four sections each devoted to one of the four subgroups, use null and alternative hypothesis statements and correct statistical verbage when referencing p-values in conclusions.
 
-## Males
+
+$H_0$:The effectivness of the drug remains the same across each subgroup
 
 
-## Females
-
-
-## LGBTQ
+$H_A$:The effectiveness of the drug changes depending on the subgroup
 
 
 
-## Druggies
+## Methods 
+
+Since the variables we are looking at are all categorical we will be using CAT-CAT method. This means we will be looking at a bar chart graph as well as performing a chi-squared and fisher exact test. These methods will help us gather our evidence. 
+
+
+# Males
+
+## Descriptive Results
+
+### Graphical Descriptive Results
+
+```{r}
+barchartGC(~class + Sex,data=Males)
+barchartGC(~class + Sex,data=Males, type="percent")
+Males=filter(FinalData, sex=="M")
+```
+
+
+
+
+
+
+
+
+
+
+### Numerical Descriptive Results
+
+## Inferential Results
+
+## Efficacy 
+
+
+# Females
+
+fhkdshskd
+
+## Descriptive Results
+
+### Graphical Descriptive Results
+
+### Numerical Descriptive Results
+
+## Inferential Results
+
+## Efficacy 
+
+
+
+
+
+
+
+
+
+
+
+
+
+# LGBTQ
+hdjkhfdsgjksdjkgjgsgj
+
+## Descriptive Results
+
+### Graphical Descriptive Results
+
+### Numerical Descriptive Results
+
+## Inferential Results
+
+## Efficacy 
+
+
+
+
+
+
+
+
+
+
+
+
+# Druggies
+hfdskhfjksjkfgjksdgfk
+
+## Descriptive Results
+
+### Graphical Descriptive Results
+
+### Numerical Descriptive Results
+
+## Inferential Results
+
+## Efficacy 
+
+
+
+
+
+
+
+
+
+
+
 
