@@ -18,6 +18,10 @@ FinalDat <-read.csv(file="final_Data.csv",header=TRUE)
 FinalData <- FinalDat  %>% select(-one_of("X"))
 FinalData <- FinalData %>%
 mutate(across(where(is.character), as.factor))
+Males=filter(FinalData, sex=="M")
+Females=filter(FinalData, sex=="F")
+LGBTQ=filter(FinalData, LGBTQ=="gay")
+Drugs=filter(FinalData, DrugUser=="yes")
 ```
 
 # Introduction
@@ -44,9 +48,19 @@ Since the variables we are looking at are all categorical we will be using CAT-C
 ### Graphical Descriptive Results
 
 ```{r}
-barchartGC(~class + Sex,data=Males)
-barchartGC(~class + Sex,data=Males, type="percent")
-Males=filter(FinalData, sex=="M")
+barchartGC(~ infected+ treatment,data=Males)
+barchartGC(~infected  + treatment ,data=Males, type="percent")
+```
+
+
+
+
+### Numerical Descriptive Results
+
+```{r}
+table1 <- xtabs(~infected + treatment, data=Males)
+rowPerc(table1)
+colPerc(table1)
 ```
 
 
@@ -58,9 +72,18 @@ Males=filter(FinalData, sex=="M")
 
 
 
-### Numerical Descriptive Results
 
 ## Inferential Results
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+
+
+
 
 ## Efficacy 
 
@@ -73,9 +96,35 @@ fhkdshskd
 
 ### Graphical Descriptive Results
 
+```{r}
+barchartGC(~ infected+ treatment,data=Females)
+barchartGC(~infected  + treatment ,data=Females, type="percent")
+```
+
+
+
+
+
 ### Numerical Descriptive Results
 
+```{r}
+table1 <- xtabs(~infected + treatment, data=Females)
+rowPerc(table1)
+colPerc(table1)
+```
+
+
 ## Inferential Results
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+
+
+
 
 ## Efficacy 
 
@@ -98,9 +147,36 @@ hdjkhfdsgjksdjkgjgsgj
 
 ### Graphical Descriptive Results
 
+```{r}
+barchartGC(~ infected+ treatment,data=LGBTQ)
+barchartGC(~infected  + treatment ,data=LGBTQ, type="percent")
+```
+
+
+
+
+
 ### Numerical Descriptive Results
 
+```{r}
+table1 <- xtabs(~infected + treatment, data=LGBTQ)
+rowPerc(table1)
+colPerc(table1)
+```
+
+
+
+
 ## Inferential Results
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+
+
 
 ## Efficacy 
 
@@ -121,10 +197,37 @@ hfdskhfjksjkfgjksdgfk
 ## Descriptive Results
 
 ### Graphical Descriptive Results
+```{r}
+barchartGC(~ infected+ treatment,data=Drugs)
+barchartGC(~infected  + treatment ,data=Drugs, type="percent")
+```
+
+
+
+
+
 
 ### Numerical Descriptive Results
 
+```{r}
+table1 <- xtabs(~infected + treatment, data=Drugs)
+rowPerc(table1)
+colPerc(table1)
+```
+
+
+
+
 ## Inferential Results
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+
+
 
 ## Efficacy 
 
