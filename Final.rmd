@@ -43,7 +43,6 @@ Since the variables we are looking at are all categorical we will be using CAT-C
 
 # Males
 
-djesdhjkfsdgjfgsdjg
 
 ## Descriptive Results
 
@@ -92,7 +91,6 @@ fisher.test(table1)
 
 # Females
 
-fhkdshskd
 
 ## Descriptive Results
 
@@ -194,7 +192,7 @@ fisher.test(table1)
 
 
 # Druggies
-hfdskhfjksjkfgjksdgfk
+
 
 ## Descriptive Results
 
@@ -204,8 +202,7 @@ barchartGC(~ infected+ treatment,data=Drugs)
 barchartGC(~infected  + treatment ,data=Drugs, type="percent")
 ```
 
-
-
+Based off the graphs here we can see that for drug users the vaccine actually makes them more susceptible to getting covid.
 
 
 
@@ -217,7 +214,7 @@ rowPerc(table1)
 colPerc(table1)
 ```
 
-
+Here we can see that of the drug users, 85% who took the vaccine ended up with covid while only 15% who took the placebo ended up with covid. 
 
 
 ## Inferential Results
