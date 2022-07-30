@@ -141,7 +141,7 @@ fisher.test(table1)
 
 
 # LGBTQ
-hdjkhfdsgjksdjkgjgsgj
+
 
 ## Descriptive Results
 
@@ -152,8 +152,7 @@ barchartGC(~ infected+ treatment,data=LGBTQ)
 barchartGC(~infected  + treatment ,data=LGBTQ, type="percent")
 ```
 
-
-
+From this bar chart it looks like those who are a part of the LGBTQ community and took the vaccine are more likely to contract it than those that took the placebo. 
 
 
 ### Numerical Descriptive Results
@@ -202,7 +201,7 @@ barchartGC(~ infected+ treatment,data=Drugs)
 barchartGC(~infected  + treatment ,data=Drugs, type="percent")
 ```
 
-Based off the graphs here we can see that for drug users the vaccine actually makes them more susceptible to getting covid.
+Based off the graphs here we can see that for drug users the vaccine actually makes them more susceptible to getting covid than taking the placebo.
 
 
 
@@ -225,6 +224,8 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```
 
+
+Based off of the results from the chi-squared test we can see that the vaccine is not effective for drug users and actually puts them more at risk for contracting covid. We can tell because the p-value from the chi squared test is below 0.05 which means that there is not enough evidence to prove that is helpful and the odds ratio from the fisher exact test shows that users who take the placebo are 0.178 times more likely to get covid from taking the placebo, which is extremely low. 
 
 
 
