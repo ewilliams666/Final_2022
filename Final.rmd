@@ -53,7 +53,7 @@ barchartGC(~ infected+ treatment,data=Males)
 barchartGC(~infected  + treatment ,data=Males, type="percent")
 ```
 
-
+Based off of the barcharts here, we can see that among males those who took the vaccine contracted covid at a lesser rate than those that took the placebo. 
 
 
 ### Numerical Descriptive Results
@@ -64,7 +64,7 @@ rowPerc(table1)
 colPerc(table1)
 ```
 
-
+Here we can see that of the males that took the vaccine, 32% contracted covid while 67% who took the placebo contracted covid. The males that took the placebo are 2.63 times more likely to contract covid as opposed to those that took the vaccine. 
 
 
 
@@ -76,11 +76,13 @@ colPerc(table1)
 
 ## Inferential Results
 
+
 ```{r}
 chisq.test(table1)
 chisqtestGC(table1)
 fisher.test(table1)
 ```
+
 
 
 
