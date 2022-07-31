@@ -84,8 +84,7 @@ fisher.test(table1)
 ```
 
 
-
-
+Here we can see that based on the fisher exact test and the chi- squared test that the vaccine is effective for males. We can tell because the p-value from the chi-squared test is below 0.05 and the fisher exact test shows that taking the placebo makes males 2.1 times more likely to contract covid. 
 
 
 ## Efficacy 
