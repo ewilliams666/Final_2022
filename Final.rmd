@@ -101,7 +101,7 @@ barchartGC(~ infected+ treatment,data=Females)
 barchartGC(~infected  + treatment ,data=Females, type="percent")
 ```
 
-
+Based off of the barchart here, we can see that for females, the vaccine does seem to prevent them from getting covid. The percentage of those who contracted covid is much less that those who took the placebo.  
 
 
 
@@ -113,6 +113,11 @@ rowPerc(table1)
 colPerc(table1)
 ```
 
+From these results, we can see that out of the women that received the vaccine, 41% of them contracted covid as opposed to the 58% who contracted covid while taking the placebo. This means that taking the placebo makes women 2.3 times more likely to contract covid. 
+
+
+
+
 
 ## Inferential Results
 
@@ -121,6 +126,10 @@ chisq.test(table1)
 chisqtestGC(table1)
 fisher.test(table1)
 ```
+
+Based of the results from the chi-squared and fisher exact test, we can conclude that the vaccine is effective for women. We can tell this because the p-value from the chi- squared test is 0.0011 which is below 0.05. We can also tell because the fisher exact test shows us that those who take the placebo are 1.43 times more likely to contract covid.
+
+
 
 
 
@@ -222,7 +231,7 @@ rowPerc(table1)
 colPerc(table1)
 ```
 
-Here we can see that of the drug users, 85% who took the vaccine ended up with covid while only 15% who took the placebo ended up with covid. 
+Here we can see that of the drug users, 85% who took the vaccine ended up with covid while only 15% who took the placebo ended up with covid. Those who took the vaccine are 3.28 times more likely to contract the virus.  
 
 
 ## Inferential Results
