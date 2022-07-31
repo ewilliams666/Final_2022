@@ -29,10 +29,10 @@ Drugs=filter(FinalData, DrugUser=="yes")
 A new  preventative vaccine (covid91) is under test in clinical trials. Given the nature of this vaccine it is suspected that the drug may exhibit different effectiveness across the variety of subpopulations tracked. Consider population subgroups by gender( guys and gals), drug use, and sexual orientation. Write a complete report that separately considers this drug for each subgroup and your recommendations as to whether people in the subgroup should take the vaccine. Structure your report in four sections each devoted to one of the four subgroups, use null and alternative hypothesis statements and correct statistical verbage when referencing p-values in conclusions.
 
 
-$H_0$:The effectivness of the drug remains the same across each subgroup
+$H_0$:The effectivness of the vaccine remains the same across each subgroup
 
 
-$H_A$:The effectiveness of the drug changes depending on the subgroup
+$H_A$:The effectiveness of the vaccine changes depending on the subgroup
 
 
 
@@ -53,7 +53,7 @@ barchartGC(~ infected+ treatment,data=Males)
 barchartGC(~infected  + treatment ,data=Males, type="percent")
 ```
 
-Based off of the barcharts here, we can see that among males those who took the vaccine contracted covid at a lesser rate than those that took the placebo. 
+Based off of the barcharts here we can see that among males, those who took the vaccine contracted covid at a lesser rate than those that took the placebo. 
 
 
 ### Numerical Descriptive Results
@@ -88,6 +88,26 @@ Here we can see that based on the fisher exact test and the chi- squared test th
 
 
 ## Efficacy 
+
+```{r}
+efficMales=2.09/(2.09+1) *100
+efficMales= round(efficMales)
+
+
+confIntLower = 1.67/(1.67+1) *100
+confIntLower = round(confIntLower)
+confIntUpper = 2.64/(2.64 + 1) *100
+confIntUpper = round(confIntUpper)
+```
+
+
+The efficacy for Males is 68%  
+
+The 95% confidence interval is (63, 73)%
+
+
+
+
 
 
 # Females
@@ -139,7 +159,20 @@ Based of the results from the chi-squared and fisher exact test, we can conclude
 ## Efficacy 
 
 
+```{r}
+efficFemales=1.42/(1.42+1) *100
+efficFemales= round(efficFemales)
 
+
+confIntLower = 1.15/(1.15+1) *100
+confIntLower = round(confIntLower)
+confIntUpper = 1.77/(1.77 + 1) *100
+confIntUpper = round(confIntUpper)
+```
+
+The efficacy for Females is 59%.
+
+The 95% confidence interval for efficacy is (53, 64)%.
 
 
 
@@ -199,7 +232,21 @@ Based off of the results from the chi squared and fisher exact tests we can see 
 ## Efficacy 
 
 
+```{r}
+efficLGBTQ=0.14/(0.14+1) *100
+efficLGBTQ= round(efficLGBTQ)
 
+
+confIntLower = 0.05/(0.05+1) *100
+confIntLower = round(confIntLower)
+confIntUpper = 0.31/(0.31 + 1) *100
+confIntUpper =round(confIntUpper)
+```
+
+
+The efficacy for LGBTQ is 12%.
+
+The 95% confidence interval for efficacy is (5, 24)%.
 
 
 
@@ -250,8 +297,26 @@ Based off of the results from the chi-squared test we can see that the vaccine i
 
 ## Efficacy 
 
+```{r}
+efficDrugs=.17/(.17+1) *100
+efficDrugs= round(efficDrugs)
 
 
+confIntLower = .07/(.07+1) *100
+confIntLower = round(confIntLower)
+confIntUpper = .36/(.36+ 1) *100
+confIntUpper = round(confIntUpper)
+```
+
+
+The efficacy for Drug users is 15%.
+
+The 95% confidence interval for efficacy is (7, 26)%.
+
+
+# Conclusion 
+
+Based off of the evidence that we have gathered from each subgroup, we can reject the null hypothesis, which states that the effect of the vaccine will remain the same among each subgroup. Based off of our evidence we found that that is not true. For some groups, like the LGBTQ community and drug users, we found that the effectiveness of the vaccine did change. Therefore we reject the null hypothesis. 
 
 
 
